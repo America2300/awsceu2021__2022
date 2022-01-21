@@ -67,8 +67,8 @@
 <main>
 
     <header>
-        <h1>Mi primer CMS</h1>
-        <h2>con POO, MVC, PHP y MySQL</h2>
+        <h1>Te ayudamos a adoptar una mascota</h1>
+        <h2>Mi primer CMS con POO, MVC, PHP y MySQL</h2>
     </header>
 
     <section class="container-fluid">

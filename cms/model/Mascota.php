@@ -1,7 +1,7 @@
 <?php
 namespace App\Model;
 
-class Noticia
+class Mascota //mascota
 {
     //Variables o atributos
     var $id;
@@ -12,8 +12,9 @@ class Noticia
     var $activo;
     var $home;
     var $fecha;
-    var $autor;
+    var $animal; //autor
     var $imagen;
+
 
     function __construct($data=null){
 
@@ -25,7 +26,7 @@ class Noticia
         $this->activo = ($data) ? $data->activo : null;
         $this->home = ($data) ? $data->home : null;
         $this->fecha = ($data) ? $data->fecha : null;
-        $this->autor = ($data) ? $data->autor : null;
+        $this->animal = ($data) ? $data->animal : null; //autor
         $this->imagen = ($data) ? $data->imagen : null;
 
     }

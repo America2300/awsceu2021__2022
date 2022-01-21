@@ -3,7 +3,7 @@
 namespace App\Helper;
 
 class DbHelper {
-
+//conexión a bd
     var $db;
 
     function __construct(){
@@ -12,8 +12,8 @@ class DbHelper {
         $opciones = [\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"];
         try {
             $this->db = new \PDO(
-                'mysql:host=localhost;dbname=cms',
-                'usuario-cms',
+                'mysql:host=localhost;dbname=cms2', //cambio la bd
+                'root',//cambio el usuario
                 'Filanasa27$',
                 $opciones);
             $this->db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);

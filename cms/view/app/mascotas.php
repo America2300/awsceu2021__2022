@@ -17,7 +17,7 @@
                         <p><?php echo date("d/m/Y", strtotime($row->fecha)) ?></p>
                     </div>
                     <div class="card-action">
-                        <a href="<?php echo $_SESSION['home']."noticia/".$row->slug ?>">Más información</a>
+                        <a href="<?php echo $_SESSION['home']."mascota/".$row->slug ?>">Más información sobre esta mascota</a>
                     </div>
                 </div>
             </div>

@@ -7,10 +7,10 @@ session_start();
 
 //Incluyo los controladores que voy a utilizar para que seran cargados por Autoload
 use App\Controller\AppController;
-use App\Controller\NoticiaController;
-use App\Controller\UsuarioController;
+use App\Controller\MascotaController;
+use App\Controller\PersonaController;
 
-//echo password_hash("Filanasa27$",  PASSWORD_BCRYPT, ['cost'=>12]);
+echo password_hash("Filanasa27$",  PASSWORD_BCRYPT, ['cost'=>12]);
 
 /*
  * Asigno a sesión las rutas de las carpetas public y home, necesarias tanto para las rutas como para
@@ -52,10 +52,10 @@ function controlador($nombre = null)
     switch ($nombre) {
         default:
             return new AppController; //front-end
-        case "noticias":
-            return new NoticiaController;//back-end de noticias
-        case "usuarios":
-            return new UsuarioController;//autenticacion y back-end de usuarios
+        case "mascotas":
+            return new MascotaController;//back-end de mascotas
+        case "personas":
+            return new PersonaController;//autenticacion y back-end de personas
     }
 
 }
@@ -75,57 +75,57 @@ switch ($ruta) {
     case "acerca-de":
         controlador()->acercade();
         break;
-    case "noticias":
-        controlador()->noticias();
-        //el controlador ejecuta el metodo noticias()
+    case "mascotas":
+        controlador()->mascotas();
+        //el controlador ejecuta el metodo mascotas()
         break;
-    case (strpos($ruta, "noticia/") === 0): //si la ruta empieza por "noticia/"
-        controlador()->noticia(str_replace("noticia/", "", $ruta));//el parametro es lo que haya después de "noticia/"
+    case (strpos($ruta, "mascota/") === 0): //si la ruta empieza por "mascota/"
+        controlador()->mascota(str_replace("mascota/", "", $ruta));//el parametro es lo que haya después de "mascota/"
         break;
 
     //Back-end
     case "admin":
     case "admin/entrar":
-        controlador("usuarios")->entrar();
+        controlador("personas")->entrar();
         break;
     case "admin/salir":
-        controlador("usuarios")->salir();
+        controlador("personas")->salir();
         break;
-    case "admin/usuarios":
-        controlador("usuarios")->index();
+    case "admin/personas":
+        controlador("personas")->index();
         break;
-    case "admin/usuarios/crear":
-        controlador("usuarios")->crear();
+    case "admin/personas/crear":
+        controlador("personas")->crear();
         break;
-    case (strpos($ruta, "admin/usuarios/editar/") === 0):
-        controlador("usuarios")->editar(str_replace("admin/usuarios/editar/", "", $ruta));
+    case (strpos($ruta, "admin/personas/editar/") === 0):
+        controlador("personas")->editar(str_replace("admin/personas/editar/", "", $ruta));
         break;
-    case (strpos($ruta, "admin/usuarios/activar/") === 0):
-        controlador("usuarios")->activar(str_replace("admin/usuarios/activar/", "", $ruta));
+    case (strpos($ruta, "admin/personas/activar/") === 0):
+        controlador("personas")->activar(str_replace("admin/personas/activar/", "", $ruta));
         break;
-    case (strpos($ruta, "admin/usuarios/borrar/") === 0):
-        controlador("usuarios")->borrar(str_replace("admin/usuarios/borrar/", "", $ruta));
+    case (strpos($ruta, "admin/personas/borrar/") === 0):
+        controlador("personas")->borrar(str_replace("admin/personas/borrar/", "", $ruta));
         break;
-    case "admin/noticias":
-        controlador("noticias")->index();
+    case "admin/mascotas":
+        controlador("mascotas")->index();
         break;
-    case "admin/noticias/crear":
-        controlador("noticias")->crear();
+    case "admin/mascotas/crear":
+        controlador("mascotas")->crear();
         break;
-    case (strpos($ruta, "admin/noticias/editar/") === 0):
-        controlador("noticias")->editar(str_replace("admin/noticias/editar/", "", $ruta));
+    case (strpos($ruta, "admin/mascotas/editar/") === 0):
+        controlador("mascotas")->editar(str_replace("admin/mascotas/editar/", "", $ruta));
         break;
-    case (strpos($ruta, "admin/noticias/activar/") === 0):
-        controlador("noticias")->activar(str_replace("admin/noticias/activar/", "", $ruta));
+    case (strpos($ruta, "admin/mascotas/activar/") === 0):
+        controlador("mascotas")->activar(str_replace("admin/mascotas/activar/", "", $ruta));
         break;
-    case (strpos($ruta, "admin/noticias/home/") === 0):
-        controlador("noticias")->home(str_replace("admin/noticias/home/", "", $ruta));
+    case (strpos($ruta, "admin/mascotas/home/") === 0):
+        controlador("mascotas")->home(str_replace("admin/mascotas/home/", "", $ruta));
         break;
-    case (strpos($ruta, "admin/noticias/borrar/") === 0):
-        controlador("noticias")->borrar(str_replace("admin/noticias/borrar/", "", $ruta));
+    case (strpos($ruta, "admin/mascotas/borrar/") === 0):
+        controlador("mascotas")->borrar(str_replace("admin/mascotas/borrar/", "", $ruta));
         break;
     case (strpos($ruta, "admin/") === 0):
-        controlador("usuarios")->entrar();
+        controlador("personas")->entrar();
         break;
 
     //Resto de rutas
