@@ -10,4 +10,5 @@
         Está desarrollada en PHP con Programación orientada a Objetos, siguiendo el patrón Modelo Vista Controlador y
         utiliza MySQL para la persistencia de datos.
     </p>
+
 </div>
