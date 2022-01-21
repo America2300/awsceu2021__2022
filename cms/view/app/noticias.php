@@ -1,5 +1,5 @@
 <h3>
-    <a href="<?php echo $_SESSION['home'] ?>" title="Inicio">Inicio</a> <span>| Noticias</span>
+    <a href="<?php echo $_SESSION['home'] ?>" title="Inicio">Inicio</a> <span>| Mascotas</span>
 </h3>
 <div class="row">
     <?php foreach ($datos as $row){ ?>

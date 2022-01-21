@@ -1,6 +1,6 @@
 <h3>
     <a href="<?php echo $_SESSION['home'] ?>" title="Inicio">Inicio</a> <span>| </span>
-    <a href="<?php echo $_SESSION['home'] ?>noticias" title="Noticias">Noticias</a> <span>| </span>
+    <a href="<?php echo $_SESSION['home'] ?>noticias" title="Noticias">Mascotas</a> <span>| </span>
     <span><?php echo $datos->titulo ?></span>
 </h3>
 <div class="row">
