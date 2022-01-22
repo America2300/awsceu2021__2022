@@ -11,15 +11,16 @@ body{
 }
 
 nav{
-    background-color: #333;
+    background-color: darkorange;
     box-shadow: none;
     -webkit-box-shadow: none;
     padding: 0 2rem;
 }
 
 nav img{
-    width: 8rem;
-    padding-top: 0.8rem;
+    width: 8rem; /*logo*/
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 main {
@@ -41,7 +42,7 @@ header h2{
 }
 
 footer{
-    background-color: #333;
+    background-color: darkorange;
     color: white;
     padding: 1rem 0;
 }
@@ -132,4 +133,8 @@ article .card-info{
 
 form p{
     padding-left: 0.8rem;
+}
+
+.material-icons{
+    color: orange;
 }

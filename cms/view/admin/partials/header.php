@@ -8,7 +8,7 @@
     <!--CSS-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo $_SESSION['public'] ?>css/admin.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $_SESSION['public'] ?>/css/admin.css">
 
 </head>
 
@@ -32,12 +32,12 @@
                 </li>
                 <?php if ($_SESSION['mascotas'] == 1){ ?>
                     <li>
-                        <a href="<?php echo $_SESSION['home'] ?>admin/mascotas" title="Mascotas">mascotas</a>
+                        <a href="<?php echo $_SESSION['home'] ?>admin/mascotas" title="Mascotas">Mascotas</a>
                     </li>
                 <?php } ?>
                 <?php if ($_SESSION['personas'] == 1){ ?>
                     <li>
-                        <a href="<?php echo $_SESSION['home'] ?>admin/personas" title="personas">personas</a>
+                        <a href="<?php echo $_SESSION['home'] ?>admin/personas" title="personas">Personas</a>
                     </li>
                 <?php } ?>
                 <li>
@@ -64,7 +64,7 @@
         <?php } ?>
         <?php if ($_SESSION['personas'] == 1){ ?>
             <li>
-                <a href="<?php echo $_SESSION['home'] ?>admin/personas" title="personas">personas</a>
+                <a href="<?php echo $_SESSION['home'] ?>admin/personas" title="personas">Personas</a>
             </li>
         <?php } ?>
         <li>

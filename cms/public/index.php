@@ -10,7 +10,7 @@ use App\Controller\AppController;
 use App\Controller\MascotaController;
 use App\Controller\PersonaController;
 
-echo password_hash("Filanasa27$",  PASSWORD_BCRYPT, ['cost'=>12]);
+//echo password_hash("Filanasa27$",  PASSWORD_BCRYPT, ['cost'=>12]);
 
 /*
  * Asigno a sesión las rutas de las carpetas public y home, necesarias tanto para las rutas como para
