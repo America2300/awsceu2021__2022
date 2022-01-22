@@ -13,7 +13,7 @@ class DbHelper {
         try {
             $this->db = new \PDO(
                 'mysql:host=localhost;dbname=cms2', //cambio la bd
-                'root',//cambio el usuario
+                'root',
                 'Filanasa27$',
                 $opciones);
             $this->db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);

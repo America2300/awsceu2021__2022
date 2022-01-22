@@ -33,7 +33,7 @@
             <p>
                 <label for="mascotas">
                     <input id="mascotas" name="mascotas" type="checkbox" <?php echo ($datos->mascotas == 1) ? "checked" : "" ?>>
-                    <span>Noticias</span>
+                    <span>Mascotas</span>
                 </label>
             </p>
             <p>

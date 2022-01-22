@@ -1,6 +1,6 @@
 <h3>
     <a href="<?php echo $_SESSION['home'] ?>" title="Inicio">Inicio</a> <span>| </span>
-    <a href="<?php echo $_SESSION['home'] ?>noticias" title="Noticias">Mascotas</a> <span>| </span>
+    <a href="<?php echo $_SESSION['home'] ?>Mascotas" title="mascotas">Mascotas</a> <span>| </span>
     <span><?php echo $datos->titulo ?></span> <!--titulo es un dato de la tabla creada-->
 </h3>
 <div class="row">
@@ -19,7 +19,7 @@
                     <br>
                     <p>
                         <strong>Fecha</strong>: <?php echo date("d/m/Y", strtotime($datos->fecha)) ?><br>
-                        <strong>Animal</strong>: <?php echo $datos->autor ?> <!--cambiar por 'animal-->
+                        <strong>Animal</strong>: <?php echo $datos->animal ?> <!--cambiar por 'animal-->
                     </p>
                 </div>
             </div>

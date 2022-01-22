@@ -1,15 +1,15 @@
 <h3>
-    <a href="<?php echo $_SESSION['home'] ?>admin" title="Inicio">Inicio</a> <span>| mascotas</span>
+    <a href="<?php echo $_SESSION['home'] ?>admin" title="Inicio">Inicio</a> <span>| Mascotas</span>
 </h3>
 <div class="row">
     <!--Nuevo-->
     <article class="col s12 l6">
         <div class="card horizontal admin">
             <div class="card-stacked">
-                <div class="card-content"> <!--contenido de la mascota-->
+                <div class="card-content">
                     <i class="grey-text material-icons medium">image</i>
                     <h4 class="grey-text">
-                        nueva mascota
+                        Nueva mascota
                     </h4><br><br>
                 </div>
                 <div class="card-action">

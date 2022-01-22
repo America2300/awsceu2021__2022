@@ -1,6 +1,6 @@
 <h3>
     <a href="<?php echo $_SESSION['home'] ?>admin" title="Inicio">Inicio</a> <span>| </span>
-    <a href="<?php echo $_SESSION['home'] ?>admin/mascotas" title="mascotas">mascotas</a> <span>| </span>
+    <a href="<?php echo $_SESSION['home'] ?>admin/mascotas" title="Mascotas">Mascotas</a> <span>| </span>
     <?php if ($datos->id){ ?>
         <span>Editar <?php echo $datos->titulo ?></span>
     <?php } else { ?>
@@ -17,8 +17,8 @@
                     <label for="titulo">Título</label>
                 </div>
                 <div class="input-field col s12">
-                    <input id="autor" type="text" name="autor" value="<?php echo $datos->autor ?>">
-                    <label for="autor">Autor</label>
+                    <input id="animal" type="text" name="animal" value="<?php echo $datos->animal ?>">
+                    <label for="animal">Animal</label>
                 </div>
                 <div class="input-field col s12">
                     <?php $fecha = ($datos->fecha) ? date("d-m-Y", strtotime($datos->fecha)) : date("d-m-Y") ?>

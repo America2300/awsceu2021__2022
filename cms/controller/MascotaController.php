@@ -3,7 +3,7 @@ namespace App\Controller;
 
 use App\Helper\ViewHelper;
 use App\Helper\DbHelper;
-use App\Model\Persona;
+use App\Model\Mascota;
 
 
 class MascotaController
@@ -34,7 +34,7 @@ class MascotaController
         //Asigno resultados a un array de instancias del modelo
         $mascota = array();
         while ($row = $rowset->fetch(\PDO::FETCH_OBJ)){
-            array_push($mascota,new Noticia($row));
+            array_push($mascota,new Mascota($row));
         }
 
         $this->view->vista("admin","mascotas/index", $mascota);
@@ -47,30 +47,30 @@ class MascotaController
         //Permisos
         $this->view->permisos("mascotas");
 
-        //Obtengo la noticia
+        //Obtengo la mascota
         $rowset = $this->db->query("SELECT * FROM mascotas WHERE id='$id' LIMIT 1");
         $row = $rowset->fetch(\PDO::FETCH_OBJ);
-        $noticia = new Noticia($row);
+        $mascota = new Mascota($row);
 
-        if ($noticia->activo == 1){
+        if ($mascota->activo == 1){
 
-            //Desactivo la noticia
+            //Desactivo la mascota
             $consulta = $this->db->exec("UPDATE mascotas SET activo=0 WHERE id='$id'");
 
             //Mensaje y redirección
             ($consulta > 0) ? //Compruebo consulta para ver que no ha habido errores
-                $this->view->redireccionConMensaje("admin/mascotas","green","La noticia <strong>$noticia->titulo</strong> se ha desactivado correctamente.") :
+                $this->view->redireccionConMensaje("admin/mascotas","green","La mascota <strong>$mascota->titulo</strong> se ha desactivado correctamente.") :
                 $this->view->redireccionConMensaje("admin/mascotas","red","Hubo un error al guardar en la base de datos.");
         }
 
         else{
 
-            //Activo la noticia
+            //Activo la mascota
             $consulta = $this->db->exec("UPDATE mascotas SET activo=1 WHERE id='$id'");
 
             //Mensaje y redirección
             ($consulta > 0) ? //Compruebo consulta para ver que no ha habido errores
-                $this->view->redireccionConMensaje("admin/mascotas","green","La noticia <strong>$noticia->titulo</strong> se ha activado correctamente.") :
+                $this->view->redireccionConMensaje("admin/mascotas","green","La mascota <strong>$mascota->titulo</strong> se ha activado correctamente.") :
                 $this->view->redireccionConMensaje("admin/mascotas","red","Hubo un error al guardar en la base de datos.");
         }
 
@@ -82,30 +82,30 @@ class MascotaController
         //Permisos
         $this->view->permisos("mascotas");
 
-        //Obtengo la noticia
+        //Obtengo la mascota
         $rowset = $this->db->query("SELECT * FROM mascotas WHERE id='$id' LIMIT 1");
         $row = $rowset->fetch(\PDO::FETCH_OBJ);
-        $noticia = new Noticia($row);
+        $mascota = new Mascota($row);
 
-        if ($noticia->home == 1){
+        if ($mascota->home == 1){
 
-            //Quito la noticia de la home
+            //Quito la mascota de la home
             $consulta = $this->db->exec("UPDATE mascotas SET home=0 WHERE id='$id'");
 
             //Mensaje y redirección
             ($consulta > 0) ? //Compruebo consulta para ver que no ha habido errores
-                $this->view->redireccionConMensaje("admin/mascotas","green","La noticia <strong>$noticia->titulo</strong> ya no se muestra en la home.") :
+                $this->view->redireccionConMensaje("admin/mascotas","green","La mascota <strong>$mascota->titulo</strong> ya no se muestra en la home.") :
                 $this->view->redireccionConMensaje("admin/mascotas","red","Hubo un error al guardar en la base de datos.");
         }
 
         else{
 
-            //Muestro la noticia en la home
+            //Muestro la mascota en la home
             $consulta = $this->db->exec("UPDATE mascotas SET home=1 WHERE id='$id'");
 
             //Mensaje y redirección
             ($consulta > 0) ? //Compruebo consulta para ver que no ha habido errores
-                $this->view->redireccionConMensaje("admin/mascotas","green","La noticia <strong>$noticia->titulo</strong> ahora se muestra en la home.") :
+                $this->view->redireccionConMensaje("admin/mascotas","green","La mascota <strong>$mascota->titulo</strong> ahora se muestra en la home.") :
                 $this->view->redireccionConMensaje("admin/mascotas","red","Hubo un error al guardar en la base de datos.");
         }
 
@@ -116,16 +116,16 @@ class MascotaController
         //Permisos
         $this->view->permisos("mascotas");
 
-        //Obtengo la noticia
+        //Obtengo la mascota
         $rowset = $this->db->query("SELECT * FROM mascotas WHERE id='$id' LIMIT 1");
         $row = $rowset->fetch(\PDO::FETCH_OBJ);
-        $noticia = new Noticia($row);
+        $mascota = new Mascota($row);
 
-        //Borro la noticia
+        //Borro la mascota
         $consulta = $this->db->exec("DELETE FROM mascotas WHERE id='$id'");
 
         //Borro la imagen asociada
-        $archivo = $_SESSION['public']."img/".$noticia->imagen;
+        $archivo = $_SESSION['public']."img/".$mascota->imagen;
         $texto_imagen = "";
         if (is_file($archivo)){
             unlink($archivo);
@@ -134,7 +134,7 @@ class MascotaController
 
         //Mensaje y redirección
         ($consulta > 0) ? //Compruebo consulta para ver que no ha habido errores
-            $this->view->redireccionConMensaje("admin/mascotas","green","La noticia se ha borrado correctamente$texto_imagen.") :
+            $this->view->redireccionConMensaje("admin/mascotas","green","La mascota se ha borrado correctamente$texto_imagen.") :
             $this->view->redireccionConMensaje("admin/mascotas","red","Hubo un error al guardar en la base de datos.");
 
     }
@@ -145,10 +145,10 @@ class MascotaController
         $this->view->permisos("mascotas");
 
         //Creo un nuevo usuario vacío
-        $noticia = new Noticia();
+        $mascota = new Mascota();
 
         //Llamo a la ventana de edición
-        $this->view->vista("admin","mascotas/editar", $noticia);
+        $this->view->vista("admin","mascotas/editar", $mascota);
 
     }
 
@@ -163,7 +163,7 @@ class MascotaController
             //Recupero los datos del formulario
             $titulo = filter_input(INPUT_POST, "titulo", FILTER_SANITIZE_STRING);
             $entradilla = filter_input(INPUT_POST, "entradilla", FILTER_SANITIZE_STRING);
-            $autor = filter_input(INPUT_POST, "autor", FILTER_SANITIZE_STRING);
+            $animal = filter_input(INPUT_POST, "animal", FILTER_SANITIZE_STRING);
             $fecha = filter_input(INPUT_POST, "fecha", FILTER_SANITIZE_STRING);
             $texto = filter_input(INPUT_POST, "texto", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
@@ -181,10 +181,10 @@ class MascotaController
 
             if ($id == "nuevo"){
 
-                //Creo una nueva noticia
+                //Creo una nueva mascota
                 $consulta = $this->db->exec("INSERT INTO mascotas 
-                    (titulo, entradilla, autor, fecha, texto, slug, imagen) VALUES 
-                    ('$titulo','$entradilla','$autor','$fecha','$texto','$slug','$imagen')");
+                    (titulo, entradilla, animal, fecha, texto, slug, imagen) VALUES 
+                    ('$titulo','$entradilla','$animal','$fecha','$texto','$slug','$imagen')");
 
                 //Subo la imagen
                 if ($imagen){
@@ -198,14 +198,14 @@ class MascotaController
 
                 //Mensaje y redirección
                 ($consulta > 0) ?
-                    $this->view->redireccionConMensaje("admin/mascotas","green","La noticia <strong>$titulo</strong> se creado correctamente.".$texto_img) :
+                    $this->view->redireccionConMensaje("admin/mascotas","green","La mascota <strong>$titulo</strong> se creado correctamente.".$texto_img) :
                     $this->view->redireccionConMensaje("admin/mascotas","red","Hubo un error al guardar en la base de datos.");
             }
             else{
 
-                //Actualizo la noticia
+                //Actualizo la mascota
                 $this->db->exec("UPDATE mascotas SET 
-                    titulo='$titulo',entradilla='$entradilla',autor='$autor',
+                    titulo='$titulo',entradilla='$entradilla',animal='$animal',
                     fecha='$fecha',texto='$texto',slug='$slug' WHERE id='$id'");
 
                 //Subo y actualizo la imagen
@@ -220,21 +220,21 @@ class MascotaController
                 }
 
                 //Mensaje y redirección
-                $this->view->redireccionConMensaje("admin/mascotas","green","La noticia <strong>$titulo</strong> se guardado correctamente.".$texto_img);
+                $this->view->redireccionConMensaje("admin/mascotas","green","La mascota <strong>$titulo</strong> se guardado correctamente.".$texto_img);
 
             }
         }
 
-        //Si no, obtengo noticia y muestro la ventana de edición
+        //Si no, obtengo mascota y muestro la ventana de edición
         else{
 
-            //Obtengo la noticia
+            //Obtengo la mascota
             $rowset = $this->db->query("SELECT * FROM mascotas WHERE id='$id' LIMIT 1");
             $row = $rowset->fetch(\PDO::FETCH_OBJ);
-            $noticia = new Noticia($row);
+            $mascota = new Mascota($row);
 
             //Llamo a la ventana de edición
-            $this->view->vista("admin","mascotas/editar", $noticia);
+            $this->view->vista("admin","mascotas/editar", $mascota);
         }
 
     }

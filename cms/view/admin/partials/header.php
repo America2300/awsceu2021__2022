@@ -32,7 +32,7 @@
                 </li>
                 <?php if ($_SESSION['mascotas'] == 1){ ?>
                     <li>
-                        <a href="<?php echo $_SESSION['home'] ?>admin/mascotas" title="mascotas">mascotas</a>
+                        <a href="<?php echo $_SESSION['home'] ?>admin/mascotas" title="Mascotas">mascotas</a>
                     </li>
                 <?php } ?>
                 <?php if ($_SESSION['personas'] == 1){ ?>
@@ -59,7 +59,7 @@
         </li>
         <?php if ($_SESSION['mascotas'] == 1){ ?>
             <li>
-                <a href="<?php echo $_SESSION['home'] ?>admin/mascotas" title="mascotas">mascotas</a>
+                <a href="<?php echo $_SESSION['home'] ?>admin/mascotas" title="Mascotas">Mascotas</a>
             </li>
         <?php } ?>
         <?php if ($_SESSION['personas'] == 1){ ?>
