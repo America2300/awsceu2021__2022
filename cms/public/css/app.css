@@ -85,7 +85,7 @@ article .card-info{
 
 .card.horizontal.small .card-image{
     max-height: 70%;
-    width: 200px;
+    width: auto;
 
 }
 
@@ -104,4 +104,5 @@ article .card-info{
     margin-left: 20px;
     border-radius: 15px;
 }
+
 

@@ -16,5 +16,6 @@
                 </button>
             </div>
         </div>
+        <a href="index.php" text-align="right">Volver al inicio</a>
     </form>
 </div>
