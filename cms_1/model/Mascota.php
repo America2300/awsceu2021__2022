@@ -12,8 +12,9 @@ class Mascota //mascota
     var $activo;
     var $home;
     var $fecha;
-    var $animal; //autor
+    var $animal;
     var $imagen;
+    var $personalidad;
 
 
     function __construct($data=null){
@@ -23,6 +24,7 @@ class Mascota //mascota
         $this->slug = ($data) ? $data->slug : null;
         $this->entradilla = ($data) ? $data->entradilla : null;
         $this->texto = ($data) ? $data->texto : null;
+        $this->personalidad = ($data) ? $data->personalidad : null;
         $this->activo = ($data) ? $data->activo : null;
         $this->home = ($data) ? $data->home : null;
         $this->fecha = ($data) ? $data->fecha : null;

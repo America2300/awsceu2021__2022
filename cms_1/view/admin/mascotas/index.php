@@ -37,7 +37,7 @@
                             <?php echo $row->titulo ?>
                         </h4>
                         <strong>URL amigable:</strong> <?php echo $row->slug ?><br>
-                        <strong>Fecha:</strong> <?php echo date("d/m/Y", strtotime($row->fecha)) ?>
+                        <strong>Fecha nacimiento:</strong> <?php echo date("d/m/Y", strtotime($row->fecha)) ?>
                     </div>
                     <div class="card-action">
                         <a href="<?php echo $_SESSION['home']."admin/mascotas/editar/".$row->id ?>" title="Editar">

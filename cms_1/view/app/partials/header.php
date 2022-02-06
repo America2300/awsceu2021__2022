@@ -67,8 +67,8 @@
 <main>
 
     <header>
-        <h1>Te ayudamos a adoptar una mascota</h1>
-        <h2>Mi primer CMS con POO, MVC, PHP y MySQL</h2>
+        <h1>Universo mascota</h1>
+        <h2>Te ayudamos a adoptar un nuevo miembro a la familia de la forma más fácil.</h2>
     </header>
 
     <section class="container-fluid">

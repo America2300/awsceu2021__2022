@@ -1,9 +1,8 @@
 </section>
 </main>
 <footer class="center-align">
-    <?php echo date("Y") ?>Panel de Administración.
-    <a target="_blank" title="Mundo mascota">
-        @ Mundo mascota
+    <?php echo date("Y") ?>_Panel de Administración
+    <a target="_blank" title="Mundo mascota">@Universo mascota
     </a>
 </footer>
 

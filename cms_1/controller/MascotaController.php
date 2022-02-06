@@ -166,6 +166,7 @@ class MascotaController
             $animal = filter_input(INPUT_POST, "animal", FILTER_SANITIZE_STRING);
             $fecha = filter_input(INPUT_POST, "fecha", FILTER_SANITIZE_STRING);
             $texto = filter_input(INPUT_POST, "texto", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $personalidad = filter_input(INPUT_POST, "personalidad", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
             //Formato de fecha para SQL
             $fecha = \DateTime::createFromFormat("d-m-Y", $fecha)->format("Y-m-d H:i:s");
@@ -183,8 +184,8 @@ class MascotaController
 
                 //Creo una nueva mascota
                 $consulta = $this->db->exec("INSERT INTO mascotas 
-                    (titulo, entradilla, animal, fecha, texto, slug, imagen) VALUES 
-                    ('$titulo','$entradilla','$animal','$fecha','$texto','$slug','$imagen')");
+                    (titulo, entradilla, animal, fecha, texto,personalidad, slug, imagen) VALUES 
+                    ('$titulo','$entradilla','$animal','$fecha','$texto','$personalidad','$slug','$imagen')");
 
                 //Subo la imagen
                 if ($imagen){
@@ -206,7 +207,7 @@ class MascotaController
                 //Actualizo la mascota
                 $this->db->exec("UPDATE mascotas SET 
                     titulo='$titulo',entradilla='$entradilla',animal='$animal',
-                    fecha='$fecha',texto='$texto',slug='$slug' WHERE id='$id'");
+                    fecha='$fecha',texto='$texto',personalidad='$personalidad',slug='$slug' WHERE id='$id'");
 
                 //Subo y actualizo la imagen
                 if ($imagen){

@@ -51,6 +51,11 @@
                     <textarea id="texto" class="materialize-textarea" name="texto"><?php echo $datos->texto ?></textarea>
                     <label for="texto">Texto</label>
                 </div>
+
+                <div class="input-field col s12">
+                    <textarea id="personalidad" class="materialize-textarea" name="personalidad"><?php echo $datos->personalidad ?></textarea>
+                    <label for="personalidad">Personalidad</label>
+                </div>
             </div>
         </div>
 

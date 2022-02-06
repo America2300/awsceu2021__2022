@@ -13,14 +13,17 @@
             </div>
             <div class="card-stacked">
                 <div class="card-content"> <!--contenido de la noticia-->
-                    <h4><?php echo $datos->titulo ?></h4>
-                    <p><?php echo $datos->entradilla ?></p>
-                    <p><?php echo $datos->texto ?></p>
-                    <br>
+                    <h4>Nombre: <?php echo $datos->titulo ?></h4>
                     <p>
-                        <strong>Fecha</strong>: <?php echo date("d/m/Y", strtotime($datos->fecha)) ?><br>
+                        <strong>Fecha de nacimiento:</strong> <?php echo date("d/m/Y", strtotime($datos->fecha)) ?><br>
                         <strong>Animal</strong>: <?php echo $datos->animal ?> <!--nombre animal-->
                     </p>
+
+                    <p><br/>Información sobre esta mascota:<br/><?php echo $datos->texto ?></p>
+                    <p>Carácter: <?php echo $datos->personalidad?></p>
+
+                    <br/>
+                    <p>Descripción corta: <?php echo $datos->entradilla ?></p>
                 </div>
             </div>
         </div>

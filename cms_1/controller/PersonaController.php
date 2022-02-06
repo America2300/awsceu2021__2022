@@ -79,7 +79,7 @@ class PersonaController
             }
             else{
                 //Redirección con mensaje
-                $this->view->redireccionConMensaje("admin","red","No existe ningún persona con ese nombre.");
+                $this->view->redireccionConMensaje("admin","red","No existe ese nombre de usuario.");
             }
         }
         //Le llevo a la página de acceso
