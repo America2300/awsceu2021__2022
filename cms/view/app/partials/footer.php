@@ -1,9 +1,9 @@
 </section>
 </main>
 <footer class="center-align">
-    © <?php echo date("Y") ?>
-    <a href="https://jairogarciarincon.com" target="_blank" title="Jairo García Rincón">
-        Jairo García Rincón
+     <?php echo date("Y") ?>@
+    <a target="_blank" title="Mundo mascota">
+        Mundo mascota
     </a>
 </footer>
 
